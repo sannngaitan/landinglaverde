@@ -24,11 +24,6 @@ function startCountdown(endDate) {
 const cyberMondayDate = new Date("2025-09-21T00:00:00Z").getTime(); 
 startCountdown(cyberMondayDate);
 
-// Suscripción al newsletter
-document.getElementById('newsletter-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("¡Gracias por suscribirte!");
-});
 // Mostrar/Ocultar Respuestas en la Sección FAQ
 const faqQuestions = document.querySelectorAll('.faq-question');
 
@@ -60,4 +55,5 @@ faqQuestions.forEach(question => {
   };
 
   var AUTOHIDE = Boolean(0);
+
 

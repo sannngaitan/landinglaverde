@@ -24,13 +24,20 @@ function startCountdown(endDate) {
 const cyberMondayDate = new Date("2025-09-21T00:00:00Z").getTime(); 
 startCountdown(cyberMondayDate);
 
-// Mostrar/Ocultar Respuestas en la Sección FAQ
-const faqQuestions = document.querySelectorAll('.faq-question');
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
 
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isVisible = answer.style.display === 'block';
+
+            // Alternar visibilidad
+            answer.style.display = isVisible ? 'none' : 'block';
+
+            // Opcional: rotar la flecha
+            question.classList.toggle('active');
+        });
     });
 });
 
@@ -55,5 +62,6 @@ faqQuestions.forEach(question => {
   };
 
   var AUTOHIDE = Boolean(0);
+
 
 
